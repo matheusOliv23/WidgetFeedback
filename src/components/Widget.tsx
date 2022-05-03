@@ -1,6 +1,7 @@
 import { ChatTeardropDots } from "phosphor-react";
 import React, { useState } from "react";
 import { Popover } from "@headlessui/react";
+import { WidgetForm } from "../components/WidgetForm";
 
 export function Widget() {
   const [isWidgetOpen, setIsWidgetOpen] = useState(false);
@@ -10,8 +11,10 @@ export function Widget() {
   }
 
   return (
-    <Popover className="absolute bottom-5 right-4">
-      <Popover.Panel>Testando</Popover.Panel>
+    <Popover className="absolute bottom-4 right-4 md:bottom-8 md:right-8 flex flex-col items-end">
+      <Popover.Panel>
+        <WidgetForm />
+      </Popover.Panel>
 
       <Popover.Button
         onClick={toggleWidgetVisibility}
